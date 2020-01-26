@@ -52,10 +52,18 @@ exports.createType = (req,res)=>{
 
 exports.createRequest = (req,res)=>{
     var request = new Request(req.body)
-
-    request.save((err,result)=>{
-        res.send(result)
+    RequestType.findOne({type : 'in progress'} , (type_error , type_result)=>{
+        if(!type_result){
+            // send error
+            console.log(type_result)
+        }
+        request.statusId = type_result;
+        request.save((err,result)=>{
+            res.send(result)
+        })
     })
+    
+   
 }
 
 exports.getAllRequests = (req,res)=>{

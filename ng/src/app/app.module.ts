@@ -12,6 +12,8 @@ import { LayoutComponent } from './admin/layout/layout.component';
 import { TodoComponent } from './admin/todo/todo.component';
 import { SubTodoComponent } from './admin/sub-todo/sub-todo.component';
 import { RegisterComponent } from './register/register.component';
+import { NewRequestComponent } from './admin/new-request/new-request.component';
+import { RequestsComponent } from './admin/requests/requests.component';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -21,7 +23,9 @@ export function createTranslateLoader(http: HttpClient) {
     LayoutComponent,
     TodoComponent,
     SubTodoComponent,
-    RegisterComponent
+    RegisterComponent,
+    NewRequestComponent,
+    RequestsComponent
   ],
   imports: [
     BrowserModule,
